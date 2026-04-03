@@ -19,7 +19,7 @@ public class ActivityService {
     //KafkaTemplate is a class provided by Spring Kafka that helps you send messages to Apache Kafka easily.
     private final KafkaTemplate<String,Activity> kafkaTemplate;
 
-    @Value("${kafka.topic.name}")
+    @Value("${kafka.topic.name:activity-topic}")
     private String topicName;
 
     public ActivityResponse trackActivity(ActivityRequest request) {
